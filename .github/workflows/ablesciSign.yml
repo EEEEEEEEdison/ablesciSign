@@ -3,7 +3,7 @@ name: AbleSci Auto Sign
 on:
   workflow_dispatch:
   schedule:
-    - cron: '40 13,23 * * *'  # UTC时间(北京时间为21:40和次日7:40)
+    - cron: '40 7,21 * * *'  # UTC时间(北京时间为21:40和次日7:40)
 
 jobs:
   sign:
@@ -35,9 +35,9 @@ jobs:
           GITHUB_ACTIONS: true
           ABLESCI_ACCOUNTS: ${{ secrets.ABLESCI_ACCOUNTS }}
           # 选择一种通知服务
-          # SCKEY: ${{ secrets.SCKEY }}          # Server酱
+          SCKEY: ${{ secrets.SCKEY }}          # Server酱
           # XZKEY: ${{ secrets.XZKEY }}        # 息知 (按需启用)
-          PUSH_PLUS_TOKEN: ${{ secrets.PUSH_PLUS_TOKEN }} # PushPlus (按需启用)
+          # PUSH_PLUS_TOKEN: ${{ secrets.PUSH_PLUS_TOKEN }} # PushPlus (按需启用)
 
       - name: Display Log
         run: |
